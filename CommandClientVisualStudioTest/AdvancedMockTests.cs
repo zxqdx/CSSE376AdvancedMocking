@@ -121,12 +121,16 @@ namespace CommandClientVisualStudioTest
             Split(bufferBytes, 9, out ip2, out bufferBytes);
             Split(bufferBytes, 4, out metaDataLength2, out bufferBytes);
             Split(bufferBytes, 2, out metaData2, out bufferBytes);
-            Assert.IsTrue(ArraysEqual(commandBytes, commandBytes2));
-            Assert.IsTrue(ArraysEqual(ipLength, ipLength2));
-            Assert.IsTrue(ArraysEqual(ip, ip2));
-            Assert.IsTrue(ArraysEqual(metaDataLength, metaDataLength2));
-            Assert.IsTrue(ArraysEqual(metaData, metaData2));
-
+            //Assert.IsTrue(ArraysEqual(commandBytes, commandBytes2));
+            //Assert.IsTrue(ArraysEqual(ipLength, ipLength2));
+            //Assert.IsTrue(ArraysEqual(ip, ip2));
+            //Assert.IsTrue(ArraysEqual(metaDataLength, metaDataLength2));
+            //Assert.IsTrue(ArraysEqual(metaData, metaData2));
+            CollectionAssert.AreEqual(commandBytes, commandBytes2);
+            CollectionAssert.AreEqual(ipLength, ipLength2);
+            CollectionAssert.AreEqual(ip, ip2);
+            CollectionAssert.AreEqual(metaDataLength, metaDataLength2);
+            CollectionAssert.AreEqual(metaData, metaData2);
         }
 
         [TestMethod]
